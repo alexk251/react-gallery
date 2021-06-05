@@ -36,4 +36,38 @@ router.get('/', (req, res) => {
     
 }); // END GET Route
 
+//POST ROUTE
+router.post('/', (req, res) => {
+    //destructure keys out of req.body
+    const {path, description} = req.body;
+
+
+    const queryText = `
+        INSERT INTO "gallery" (path, description)
+        VALUES ($1, $2);
+    `
+    const values = [path, description];
+    pool.query(queryText, values).then(result => {
+        res.sendStatus(201)
+    }).catch(err => {
+        console.error(err)
+        res.sendStatus(500);
+    })
+
+})
+//DELETE ROUTE
+router.delete('/:id', (req, res) => {
+    
+    const idToDelete = req.params.id
+    const queryText = `DELETE FROM "gallery" WHERE "id" = $1;`
+    pool.query(queryText, [idToDelete]).then(result => {
+        
+        res.sendStatus(204)
+    }).catch(err => {
+        console.error(err)
+        res.sendStatus(500);
+    })
+
+})
+
 module.exports = router;
