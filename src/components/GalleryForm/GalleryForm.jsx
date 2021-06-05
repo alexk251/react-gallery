@@ -32,7 +32,7 @@ function AddForm ({getGallery}) {
                     className='input'
                     value={descriptionInput} 
                     onChange={(event) => setDescriptionInput(event.target.value)}
-                    placeholder="name"
+                    placeholder="Guitar Name or Description"
                     />
                 <input
                     className='input' 
