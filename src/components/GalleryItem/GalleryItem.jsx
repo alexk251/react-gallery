@@ -26,7 +26,7 @@ function GalleryItem({ item, getGallery }) {
                 {/* conditionally renders either image or description if you click on button */}
                 { showImage ? (
                     <div>
-                        {item.path}
+                        <img src={item.path}></img>
                     </div>
                 ) : (
                     <div>
