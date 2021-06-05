@@ -6,6 +6,7 @@ function GalleryItem({ item, getGallery }) {
     // sets state of showImage to conditionally render below in return
     const [showImage, setShowImage] = useState(true);
 
+    //handles like function axios put request
     const handleLike = () => {
         //increase likes and sets as data
         const data = {
@@ -18,6 +19,20 @@ function GalleryItem({ item, getGallery }) {
             getGallery();
         }).catch(err => {
             console.log(err);
+        })
+    }
+
+    //handles axios delete request to server
+    const handleDelete = () => {
+        console.log(item);
+
+        
+        axios.delete(`/gallery/${item.id}`).then(response => {
+            console.log(response);
+            
+            getGallery();
+        }).catch(err => {
+            console.log(err)
         })
     }
 
@@ -43,6 +58,7 @@ function GalleryItem({ item, getGallery }) {
                 {/* add likes button */}
                 <p>{item.likes} like this</p>
                 <button className="btn" onClick={handleLike}>Like</button>
+                <button className="btn" onClick={handleDelete}>Delete</button>
             </div>
         </div>
     )
