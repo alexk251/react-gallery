@@ -7,14 +7,18 @@ const pool = require('../modules/pool.js');
 
 // PUT Route
 router.put('/like/:id', (req, res) => {
-    // console.log(req.params);
-    // const galleryId = req.params.id;
-    // for(const galleryItem of galleryItems) {
-    //     if(galleryItem.id == galleryId) {
-    //         galleryItem.likes += 1;
-    //     }
-    // }
-    // res.sendStatus(200);
+    const queryText = `
+    UPDATE "gallery" SET "likes" = ($1 +1) Where "id" = $2;
+    `
+
+    const values = [req.body.likes, req.params.id]
+
+    pool.query(queryText, values).then(result => {
+        res.sendStatus(200)
+    }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+    })
 }); // END PUT Route
 
 // GET Route
