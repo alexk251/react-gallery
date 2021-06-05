@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
+import AddForm from '../GalleryForm/GalleryForm'
 
 
 function App() {
@@ -29,6 +30,7 @@ const getGallery = () => {
         <header className="App-header">
           <h1 className="App-title">Guitar Gallery</h1>
         </header>
+        <AddForm  getGallery={getGallery}/>
         <GalleryList gallery={gallery} getGallery={getGallery} />
       </div>
     );
