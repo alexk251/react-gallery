@@ -14,6 +14,9 @@
   "devDependencies": {
     "nodemon": "^1.18.4"
   },
+  "engines": {
+    "node": "16.2.0"
+  },
   "scripts": {
     "start": "react-scripts build && node server/server.js",
     "client": "react-scripts start",
@@ -32,5 +35,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "React Guitar Gallery",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexk251/react-gallery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexk251/react-gallery/issues"
+  },
+  "homepage": "https://github.com/alexk251/react-gallery#readme"
 }
