@@ -1,0 +1,16 @@
+
+
+.listItem {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    flex: auto;
+    flex-wrap: wrap;
+    margin: 1em;
+    border-radius: 25px;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}

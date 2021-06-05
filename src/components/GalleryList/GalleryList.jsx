@@ -1,4 +1,5 @@
 import GalleryItem from "../GalleryItem/GalleryItem"
+import './GalleryList.css'
 
 function GalleryList ({gallery, getGallery}) {
     // renders and loops gallery in a list of components
