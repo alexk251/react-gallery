@@ -5,13 +5,15 @@ import './App.css';
 
 
 function App() {
+//establish variable and set variable for gallery state
+const [gallery, setGallery] = useState([]);
 
-  const [gallery, setGallery] = useState([]);
-
+//trigger getGallery function on page load
 useEffect(() => {
   getGallery()
 }, [])
 
+//axios /gallery server request returns data
 const getGallery = () => {
     console.log('inside getGallery')
     axios.get('/gallery').then(response => {
