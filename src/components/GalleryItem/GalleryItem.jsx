@@ -31,14 +31,18 @@ function GalleryItem({ item, getGallery }) {
                     </div>
                 ) : (
                     <div>
-                        {item.description}
+                        <p className="padCenter">{item.description}</p>
                     </div>
                 )}
             </div>
             <div>
+                {/* add show description button */}
+                <button className="btn" onClick={() => setShowImage(!showImage)}>
+                    {showImage ? 'Guitar Name' : 'Guitar Image'}
+                </button>
                 {/* add likes button */}
                 <p>{item.likes} like this</p>
-                <button onClick={handleLike}>Like</button>
+                <button className="btn" onClick={handleLike}>Like</button>
             </div>
         </div>
     )
