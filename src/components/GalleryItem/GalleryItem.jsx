@@ -38,7 +38,7 @@ function GalleryItem({ item, getGallery }) {
             <div>
                 {/* add show description button */}
                 <button className="btn" onClick={() => setShowImage(!showImage)}>
-                    {showImage ? 'Guitar Name' : 'Guitar Image'}
+                    {showImage ? 'Show Guitar Name' : 'Show Guitar Image'}
                 </button>
                 {/* add likes button */}
                 <p>{item.likes} like this</p>
