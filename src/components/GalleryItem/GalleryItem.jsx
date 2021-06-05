@@ -9,7 +9,7 @@ function GalleryItem({ item, getGallery }) {
     const handleLike = () => {
         //increase likes and sets as data
         const data = {
-            likes: (item.likes += 1)
+            likes: (item.likes)
         }
         //axios put call to server path with id and data
         axios.put(`/gallery/like/${item.id}`, data).then(response => {
