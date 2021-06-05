@@ -27,11 +27,11 @@ function GalleryItem({ item, getGallery }) {
                 {/* conditionally renders either image or description if you click on button */}
                 { showImage ? (
                     <div>
-                        <img src={item.path}></img>
+                        <img onClick={() => setShowImage(!showImage)} src={item.path}></img>
                     </div>
                 ) : (
                     <div>
-                        <p className="padCenter">{item.description}</p>
+                        <p onClick={() => setShowImage(!showImage)} className="padCenter">{item.description}</p>
                     </div>
                 )}
             </div>
