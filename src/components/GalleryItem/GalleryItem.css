@@ -28,5 +28,8 @@ img {
 }
 
 .padCenter {
-    padding: auto;
+    padding: 40px 20px;
+    height: center;
+    line-height: normal;
+
 }
